@@ -1,0 +1,59 @@
+Phase 5A Qwen3:14b — FINAL FREEZE
+=================================
+
+Primary result:
+  No-cache H100 benchmark
+
+Primary experiment:
+  phase5a_qwen3_14b_nocache_sensitivity
+
+Episodes:
+  1040 total
+  960 primary benchmark tuples
+  80 repeated-trial episodes
+
+Scientific fingerprint:
+  27e08c3353ae97563129569e389917ac685c2351a1c8e8d04c7fa042429fc6ec
+
+Primary findings:
+  - Reachable success = 100% across U0-U3.
+  - U0 planning cost = 7 and matches A* optimum.
+  - All 227 primary unreachable episodes were missed as dead ends.
+  - Qwen never declared no_solution.
+  - Approval-delay recovery = 100%.
+  - Housing recovery ≈ 43.46%.
+  - Provider recovery ≈ 44.04%.
+  - Provider recovery given alternate available ≈ 66.67%.
+  - Zero malformed responses.
+
+Cache sensitivity:
+  Cached decisions = 13,275.
+  Cached response-cache hits = 8,882.
+  No-cache response-cache hits = 0.
+
+  Action divergences = 1,258 decisions across 145 episodes.
+  All 1,258 divergences occurred in:
+    unreachable_no_valid_provider
+
+  Of divergent decisions:
+    1,247 = both alternatives invalid
+    11    = validity changed
+    0     = both alternatives valid
+
+  All 11 validity-changed cases were U3 and involved:
+    valid WAIT <-> invalid county-mismatched provider selection.
+
+Conclusion:
+  Response caching does not materially alter Qwen3:14b's
+  feasible-state planning behavior or primary scientific conclusions.
+  Stochastic action variation becomes visible after formal
+  infeasibility has already occurred.
+
+Reporting choice:
+  No-cache run = primary Phase 5A Qwen result.
+  Cached run   = cache-sensitivity/control result.
+
+Research implication:
+  Qwen is strong at feasible workflow execution but lacks reliable
+  terminal infeasibility/dead-end recognition. This directly motivates
+  Phase 5B LLM + symbolic search/dead-end verification.

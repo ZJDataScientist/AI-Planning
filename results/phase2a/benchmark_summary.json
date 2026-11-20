@@ -1,0 +1,784 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-11-10T03:27:31Z",
+    "seed_ranges": {
+      "A_simple": [
+        410000,
+        410034
+      ],
+      "B_moderate_ambiguity": [
+        411000,
+        411033
+      ],
+      "C_high_ambiguity": [
+        412000,
+        412033
+      ],
+      "D1_no_usable_provider": [
+        413000,
+        413010
+      ],
+      "D2_eligibility_blocked": [
+        414000,
+        414005
+      ]
+    },
+    "condition_specs": {
+      "A_simple": {
+        "num_providers": 5,
+        "num_valid_providers": 3,
+        "valid_provider_position": "early"
+      },
+      "B_moderate_ambiguity": {
+        "num_providers": 9,
+        "num_valid_providers": 2,
+        "valid_provider_position": "interleaved"
+      },
+      "C_high_ambiguity": {
+        "num_providers": 10,
+        "num_valid_providers": 1,
+        "valid_provider_position": "late"
+      }
+    },
+    "max_expansions_solvable": 200000,
+    "max_expansions_unsolvable": 3000,
+    "cost_config": {
+      "valid_workflow_action": 1.0,
+      "invalid_action": 50.0,
+      "provider_mismatch": 100.0
+    },
+    "heuristics": [
+      {
+        "name": "h_zero",
+        "admissibility_status": "proven_admissible",
+        "description": "Zero heuristic; A* degenerates to uniform-cost search (correctness control)."
+      },
+      {
+        "name": "h1_remaining_workflow",
+        "admissibility_status": "proven_admissible",
+        "description": "Counts remaining mandatory workflow milestones, scaled by the minimum per-action cost."
+      },
+      {
+        "name": "h2_provider_feasibility",
+        "admissibility_status": "proven_admissible",
+        "description": "H1 plus an exact infinite-cost short-circuit when no scenario provider can ever validate."
+      }
+    ],
+    "n_total_trials": 460,
+    "note": "This script does not itself re-run `pytest tests/`; docs/phase2a_review.md records the full-suite result for this run."
+  },
+  "per_algorithm_condition": [
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "astar",
+      "heuristic": "h1_remaining_workflow",
+      "n_scenarios": 34,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 8.0,
+      "median_nodes_expanded": 8.0,
+      "mean_nodes_generated": 17.0,
+      "median_nodes_generated": 17.0,
+      "mean_frontier_peak_size": 10.0,
+      "mean_runtime_seconds": 0.00038539949694977086,
+      "median_runtime_seconds": 0.0003762084525078535,
+      "mean_node_reduction_pct_vs_bfs": 71.42857142857143
+    },
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "astar",
+      "heuristic": "h2_provider_feasibility",
+      "n_scenarios": 34,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 8.0,
+      "median_nodes_expanded": 8.0,
+      "mean_nodes_generated": 17.0,
+      "median_nodes_generated": 17.0,
+      "mean_frontier_peak_size": 10.0,
+      "mean_runtime_seconds": 0.0004348577794564121,
+      "median_runtime_seconds": 0.00042877113446593285,
+      "mean_node_reduction_pct_vs_bfs": 71.42857142857143
+    },
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "astar",
+      "heuristic": "h_zero",
+      "n_scenarios": 34,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 41.0,
+      "median_nodes_expanded": 41.0,
+      "mean_nodes_generated": 56.0,
+      "median_nodes_generated": 56.0,
+      "mean_frontier_peak_size": 16.0,
+      "mean_runtime_seconds": 0.002144781776758678,
+      "median_runtime_seconds": 0.002086020540446043,
+      "mean_node_reduction_pct_vs_bfs": -46.42857142857143
+    },
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "bfs",
+      "heuristic": "",
+      "n_scenarios": 34,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 28.0,
+      "median_nodes_expanded": 28.0,
+      "mean_nodes_generated": null,
+      "median_nodes_generated": null,
+      "mean_frontier_peak_size": null,
+      "mean_runtime_seconds": 0.0014694557826527778,
+      "median_runtime_seconds": 0.0014295836444944143,
+      "mean_node_reduction_pct_vs_bfs": null
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "astar",
+      "heuristic": "h1_remaining_workflow",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 8.0,
+      "median_nodes_expanded": 8,
+      "mean_nodes_generated": 16.0,
+      "median_nodes_generated": 16,
+      "mean_frontier_peak_size": 9.0,
+      "mean_runtime_seconds": 0.0004012752183233247,
+      "median_runtime_seconds": 0.0003853337839245796,
+      "mean_node_reduction_pct_vs_bfs": 68.0
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "astar",
+      "heuristic": "h2_provider_feasibility",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 8.0,
+      "median_nodes_expanded": 8,
+      "mean_nodes_generated": 16.0,
+      "median_nodes_generated": 16,
+      "mean_frontier_peak_size": 9.0,
+      "mean_runtime_seconds": 0.000479876303650213,
+      "median_runtime_seconds": 0.0004758751019835472,
+      "mean_node_reduction_pct_vs_bfs": 68.0
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "astar",
+      "heuristic": "h_zero",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 35.0,
+      "median_nodes_expanded": 35,
+      "mean_nodes_generated": 46.0,
+      "median_nodes_generated": 46,
+      "mean_frontier_peak_size": 12.0,
+      "mean_runtime_seconds": 0.0018413572459284103,
+      "median_runtime_seconds": 0.0018025832250714302,
+      "mean_node_reduction_pct_vs_bfs": -40.0
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "bfs",
+      "heuristic": "",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 25.0,
+      "median_nodes_expanded": 25,
+      "mean_nodes_generated": null,
+      "median_nodes_generated": null,
+      "mean_frontier_peak_size": null,
+      "mean_runtime_seconds": 0.0013351225661057415,
+      "median_runtime_seconds": 0.0012995828874409199,
+      "mean_node_reduction_pct_vs_bfs": null
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "astar",
+      "heuristic": "h1_remaining_workflow",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 8.0,
+      "median_nodes_expanded": 8,
+      "mean_nodes_generated": 15.0,
+      "median_nodes_generated": 15,
+      "mean_frontier_peak_size": 8.0,
+      "mean_runtime_seconds": 0.00038384472612630236,
+      "median_runtime_seconds": 0.0003772089257836342,
+      "mean_node_reduction_pct_vs_bfs": 63.63636363636363
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "astar",
+      "heuristic": "h2_provider_feasibility",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 8.0,
+      "median_nodes_expanded": 8,
+      "mean_nodes_generated": 15.0,
+      "median_nodes_generated": 15,
+      "mean_frontier_peak_size": 8.0,
+      "mean_runtime_seconds": 0.0008126326243985783,
+      "median_runtime_seconds": 0.0007804166525602341,
+      "mean_node_reduction_pct_vs_bfs": 63.63636363636363
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "astar",
+      "heuristic": "h_zero",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 29.0,
+      "median_nodes_expanded": 29,
+      "mean_nodes_generated": 36.0,
+      "median_nodes_generated": 36,
+      "mean_frontier_peak_size": 8.0,
+      "mean_runtime_seconds": 0.0015251856635917318,
+      "median_runtime_seconds": 0.001497833989560604,
+      "mean_node_reduction_pct_vs_bfs": -31.818181818181817
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "bfs",
+      "heuristic": "",
+      "n_scenarios": 33,
+      "success_rate": 1.0,
+      "optimal_solution_rate": 1.0,
+      "mean_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_nodes_expanded": 22.0,
+      "median_nodes_expanded": 22,
+      "mean_nodes_generated": null,
+      "median_nodes_generated": null,
+      "mean_frontier_peak_size": null,
+      "mean_runtime_seconds": 0.001181840854273601,
+      "median_runtime_seconds": 0.00115537503734231,
+      "mean_node_reduction_pct_vs_bfs": null
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "astar",
+      "heuristic": "h1_remaining_workflow",
+      "n_scenarios": 10,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 3000.0,
+      "median_nodes_expanded": 3000.0,
+      "mean_nodes_generated": 3003.0,
+      "median_nodes_generated": 3003.0,
+      "mean_frontier_peak_size": 4.0,
+      "mean_runtime_seconds": 0.15700225839391352,
+      "median_runtime_seconds": 0.15664510382339358,
+      "mean_node_reduction_pct_vs_bfs": 0.03332222592469177
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "astar",
+      "heuristic": "h2_provider_feasibility",
+      "n_scenarios": 10,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 0.0,
+      "median_nodes_expanded": 0.0,
+      "mean_nodes_generated": 1.0,
+      "median_nodes_generated": 1.0,
+      "mean_frontier_peak_size": 0.0,
+      "mean_runtime_seconds": 1.9970722496509553e-05,
+      "median_runtime_seconds": 1.8582912161946297e-05,
+      "mean_node_reduction_pct_vs_bfs": 100.0
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "astar",
+      "heuristic": "h_zero",
+      "n_scenarios": 10,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 3000.0,
+      "median_nodes_expanded": 3000.0,
+      "mean_nodes_generated": 3003.0,
+      "median_nodes_generated": 3003.0,
+      "mean_frontier_peak_size": 4.0,
+      "mean_runtime_seconds": 0.15726999598555266,
+      "median_runtime_seconds": 0.156949479598552,
+      "mean_node_reduction_pct_vs_bfs": 0.03332222592469177
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "bfs",
+      "heuristic": "",
+      "n_scenarios": 10,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 3001.0,
+      "median_nodes_expanded": 3001.0,
+      "mean_nodes_generated": null,
+      "median_nodes_generated": null,
+      "mean_frontier_peak_size": null,
+      "mean_runtime_seconds": 0.15498955016955734,
+      "median_runtime_seconds": 0.1540752297732979,
+      "mean_node_reduction_pct_vs_bfs": null
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "astar",
+      "heuristic": "h1_remaining_workflow",
+      "n_scenarios": 5,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 3000.0,
+      "median_nodes_expanded": 3000,
+      "mean_nodes_generated": 3000.0,
+      "median_nodes_generated": 3000,
+      "mean_frontier_peak_size": 1.0,
+      "mean_runtime_seconds": 0.13903640862554312,
+      "median_runtime_seconds": 0.139551208820194,
+      "mean_node_reduction_pct_vs_bfs": 0.03332222592469177
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "astar",
+      "heuristic": "h2_provider_feasibility",
+      "n_scenarios": 5,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 3000.0,
+      "median_nodes_expanded": 3000,
+      "mean_nodes_generated": 3000.0,
+      "median_nodes_generated": 3000,
+      "mean_frontier_peak_size": 1.0,
+      "mean_runtime_seconds": 0.14874166678637266,
+      "median_runtime_seconds": 0.14835991710424423,
+      "mean_node_reduction_pct_vs_bfs": 0.03332222592469177
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "astar",
+      "heuristic": "h_zero",
+      "n_scenarios": 5,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 3000.0,
+      "median_nodes_expanded": 3000,
+      "mean_nodes_generated": 3000.0,
+      "median_nodes_generated": 3000,
+      "mean_frontier_peak_size": 1.0,
+      "mean_runtime_seconds": 0.13825195860117673,
+      "median_runtime_seconds": 0.13788599986582994,
+      "mean_node_reduction_pct_vs_bfs": 0.03332222592469177
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "bfs",
+      "heuristic": "",
+      "n_scenarios": 5,
+      "success_rate": 0.0,
+      "optimal_solution_rate": null,
+      "mean_path_length": null,
+      "mean_planning_cost": null,
+      "mean_nodes_expanded": 3001.0,
+      "median_nodes_expanded": 3001,
+      "mean_nodes_generated": null,
+      "median_nodes_generated": null,
+      "mean_frontier_peak_size": null,
+      "mean_runtime_seconds": 0.13655422516167165,
+      "median_runtime_seconds": 0.13577191717922688,
+      "mean_node_reduction_pct_vs_bfs": null
+    }
+  ],
+  "paired_bfs_vs_astar_comparisons": [
+    {
+      "complexity_condition": "A_simple",
+      "heuristic": "h1_remaining_workflow",
+      "n_paired_scenarios": 34,
+      "node_reduction_pct": {
+        "mean": 71.42857142857143,
+        "median": 71.42857142857143,
+        "stdev": 0.0,
+        "ci95": [
+          71.42857142857143,
+          71.42857142857143
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "A_simple",
+      "heuristic": "h2_provider_feasibility",
+      "n_paired_scenarios": 34,
+      "node_reduction_pct": {
+        "mean": 71.42857142857143,
+        "median": 71.42857142857143,
+        "stdev": 0.0,
+        "ci95": [
+          71.42857142857143,
+          71.42857142857143
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "A_simple",
+      "heuristic": "h_zero",
+      "n_paired_scenarios": 34,
+      "node_reduction_pct": {
+        "mean": -46.42857142857143,
+        "median": -46.42857142857143,
+        "stdev": 0.0,
+        "ci95": [
+          -46.42857142857143,
+          -46.42857142857143
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "heuristic": "h1_remaining_workflow",
+      "n_paired_scenarios": 33,
+      "node_reduction_pct": {
+        "mean": 68.0,
+        "median": 68.0,
+        "stdev": 0.0,
+        "ci95": [
+          68.0,
+          68.0
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "heuristic": "h2_provider_feasibility",
+      "n_paired_scenarios": 33,
+      "node_reduction_pct": {
+        "mean": 68.0,
+        "median": 68.0,
+        "stdev": 0.0,
+        "ci95": [
+          68.0,
+          68.0
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "heuristic": "h_zero",
+      "n_paired_scenarios": 33,
+      "node_reduction_pct": {
+        "mean": -40.0,
+        "median": -40.0,
+        "stdev": 0.0,
+        "ci95": [
+          -40.0,
+          -40.0
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "heuristic": "h1_remaining_workflow",
+      "n_paired_scenarios": 33,
+      "node_reduction_pct": {
+        "mean": 63.63636363636363,
+        "median": 63.63636363636363,
+        "stdev": 0.0,
+        "ci95": [
+          63.63636363636363,
+          63.63636363636363
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "heuristic": "h2_provider_feasibility",
+      "n_paired_scenarios": 33,
+      "node_reduction_pct": {
+        "mean": 63.63636363636363,
+        "median": 63.63636363636363,
+        "stdev": 0.0,
+        "ci95": [
+          63.63636363636363,
+          63.63636363636363
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "heuristic": "h_zero",
+      "n_paired_scenarios": 33,
+      "node_reduction_pct": {
+        "mean": -31.818181818181817,
+        "median": -31.818181818181817,
+        "stdev": 0.0,
+        "ci95": [
+          -31.818181818181817,
+          -31.818181818181817
+        ]
+      },
+      "optimality_gap": {
+        "mean": 0.0,
+        "median": 0.0,
+        "stdev": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "heuristic": "h1_remaining_workflow",
+      "n_paired_scenarios": 10,
+      "node_reduction_pct": {
+        "mean": 0.03332222592469177,
+        "median": 0.03332222592469177,
+        "stdev": 0.0,
+        "ci95": [
+          0.03332222592469177,
+          0.03332222592469177
+        ]
+      },
+      "optimality_gap": {
+        "mean": null,
+        "median": null,
+        "stdev": null,
+        "ci95": null,
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "heuristic": "h2_provider_feasibility",
+      "n_paired_scenarios": 10,
+      "node_reduction_pct": {
+        "mean": 100.0,
+        "median": 100.0,
+        "stdev": 0.0,
+        "ci95": [
+          100.0,
+          100.0
+        ]
+      },
+      "optimality_gap": {
+        "mean": null,
+        "median": null,
+        "stdev": null,
+        "ci95": null,
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "heuristic": "h_zero",
+      "n_paired_scenarios": 10,
+      "node_reduction_pct": {
+        "mean": 0.03332222592469177,
+        "median": 0.03332222592469177,
+        "stdev": 0.0,
+        "ci95": [
+          0.03332222592469177,
+          0.03332222592469177
+        ]
+      },
+      "optimality_gap": {
+        "mean": null,
+        "median": null,
+        "stdev": null,
+        "ci95": null,
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "heuristic": "h1_remaining_workflow",
+      "n_paired_scenarios": 5,
+      "node_reduction_pct": {
+        "mean": 0.03332222592469177,
+        "median": 0.03332222592469177,
+        "stdev": 0.0,
+        "ci95": [
+          0.03332222592469177,
+          0.03332222592469177
+        ]
+      },
+      "optimality_gap": {
+        "mean": null,
+        "median": null,
+        "stdev": null,
+        "ci95": null,
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "heuristic": "h2_provider_feasibility",
+      "n_paired_scenarios": 5,
+      "node_reduction_pct": {
+        "mean": 0.03332222592469177,
+        "median": 0.03332222592469177,
+        "stdev": 0.0,
+        "ci95": [
+          0.03332222592469177,
+          0.03332222592469177
+        ]
+      },
+      "optimality_gap": {
+        "mean": null,
+        "median": null,
+        "stdev": null,
+        "ci95": null,
+        "n_nonzero": 0
+      }
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "heuristic": "h_zero",
+      "n_paired_scenarios": 5,
+      "node_reduction_pct": {
+        "mean": 0.03332222592469177,
+        "median": 0.03332222592469177,
+        "stdev": 0.0,
+        "ci95": [
+          0.03332222592469177,
+          0.03332222592469177
+        ]
+      },
+      "optimality_gap": {
+        "mean": null,
+        "median": null,
+        "stdev": null,
+        "ci95": null,
+        "n_nonzero": 0
+      }
+    }
+  ],
+  "failure_classification_counts": {
+    "none": 400,
+    "frontier_exhausted": 50,
+    "goal_unreachable": 10
+  },
+  "critical_issues": [],
+  "phase2b_readiness": "PASS",
+  "phase2b_readiness_reason": "No planner defects, cost mismatches, invalid plans, or optimality violations detected."
+}

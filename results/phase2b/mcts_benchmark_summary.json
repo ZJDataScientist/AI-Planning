@@ -1,0 +1,1071 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-11-10T06:24:27Z",
+    "main_seed_ranges": {
+      "A_simple": [
+        410000,
+        410010
+      ],
+      "B_moderate_ambiguity": [
+        411000,
+        411010
+      ],
+      "C_high_ambiguity": [
+        412000,
+        412010
+      ],
+      "D1_no_usable_provider": [
+        413000,
+        413005
+      ],
+      "D2_eligibility_blocked": [
+        414000,
+        414005
+      ]
+    },
+    "budget_horizon_sweep_seed_ranges": {
+      "A_simple": [
+        410000,
+        410003
+      ],
+      "B_moderate_ambiguity": [
+        411000,
+        411003
+      ],
+      "C_high_ambiguity": [
+        412000,
+        412003
+      ]
+    },
+    "exploration_sweep_seed_ranges": {
+      "A_simple": [
+        410000,
+        410002
+      ],
+      "B_moderate_ambiguity": [
+        411000,
+        411002
+      ],
+      "C_high_ambiguity": [
+        412000,
+        412002
+      ]
+    },
+    "condition_specs": {
+      "A_simple": {
+        "num_providers": 5,
+        "num_valid_providers": 3,
+        "valid_provider_position": "early"
+      },
+      "B_moderate_ambiguity": {
+        "num_providers": 9,
+        "num_valid_providers": 2,
+        "valid_provider_position": "interleaved"
+      },
+      "C_high_ambiguity": {
+        "num_providers": 10,
+        "num_valid_providers": 1,
+        "valid_provider_position": "late"
+      }
+    },
+    "astar_heuristic": "h2_provider_feasibility",
+    "mcts_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "mcts_default_iterations": 500,
+    "mcts_default_planning_horizon": 10,
+    "mcts_default_exploration_constant": 1.4142135623730951,
+    "iteration_budgets_swept": [
+      50,
+      100,
+      250,
+      500,
+      1000,
+      2500
+    ],
+    "planning_horizons_swept": [
+      5,
+      8,
+      10,
+      15
+    ],
+    "exploration_constants_swept": [
+      0.5,
+      1.0,
+      1.4142135623730951,
+      2.0
+    ],
+    "max_expansions_solvable": 200000,
+    "max_expansions_unsolvable": 3000,
+    "mcts_max_plan_steps_solvable": 20,
+    "mcts_max_plan_steps_unsolvable": 10,
+    "cost_config": {
+      "valid_workflow_action": 1.0,
+      "invalid_action": 50.0,
+      "provider_mismatch": 100.0
+    },
+    "mcts_utility_config": {
+      "goal_reached_bonus": 1000.0,
+      "cost_weight": -1.0,
+      "constraint_violation_weight": -50.0,
+      "horizon_exhausted_value": -5.0,
+      "dead_end_penalty": -50.0
+    },
+    "n_total_trials": 1620,
+    "total_runtime_seconds": 103.93986533395946,
+    "note": "This script does not itself re-run `pytest tests/`; docs/phase2b_review.md records the full-suite result for this run."
+  },
+  "main_comparison": [
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "astar+h2_provider_feasibility",
+      "rollout_policy": "",
+      "n": 10,
+      "n_success": 10,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.0004424664191901684,
+      "median_runtime_seconds": 0.0004430413246154785,
+      "mean_nodes_created": 17.0,
+      "mean_nodes_expanded": 8.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "bfs",
+      "rollout_policy": "",
+      "n": 10,
+      "n_success": 10,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.0014622832648456096,
+      "median_runtime_seconds": 0.0014437499921768904,
+      "mean_nodes_created": null,
+      "mean_nodes_expanded": 28.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "mcts_r0",
+      "rollout_policy": "r0",
+      "n": 50,
+      "n_success": 50,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": 0.6,
+      "mean_path_length": 7.8,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.8,
+      "mean_cost_gap": 0.8,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 1.178030178747903,
+      "ci95_cost_gap": [
+        0.4734666938886632,
+        1.126533306111337
+      ],
+      "mean_relative_cost_gap": 0.11428571428571427,
+      "mean_runtime_seconds": 0.05589494504965842,
+      "median_runtime_seconds": 0.04670952074229717,
+      "mean_nodes_created": 144.4,
+      "mean_nodes_expanded": 136.6,
+      "mean_rollout_steps": 533.8
+    },
+    {
+      "complexity_condition": "A_simple",
+      "algorithm": "mcts_r1",
+      "rollout_policy": "r1",
+      "n": 50,
+      "n_success": 50,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": 1.0,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_relative_cost_gap": 0.0,
+      "mean_runtime_seconds": 0.06481084428727626,
+      "median_runtime_seconds": 0.06447418825700879,
+      "mean_nodes_created": 312.0,
+      "mean_nodes_expanded": 305.0,
+      "mean_rollout_steps": 651.6
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "astar+h2_provider_feasibility",
+      "rollout_policy": "",
+      "n": 10,
+      "n_success": 10,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.0004998665768653155,
+      "median_runtime_seconds": 0.0004800204187631607,
+      "mean_nodes_created": 16.0,
+      "mean_nodes_expanded": 8.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "bfs",
+      "rollout_policy": "",
+      "n": 10,
+      "n_success": 10,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.0013391207437962293,
+      "median_runtime_seconds": 0.0013009789399802685,
+      "mean_nodes_created": null,
+      "mean_nodes_expanded": 25.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "mcts_r0",
+      "rollout_policy": "r0",
+      "n": 50,
+      "n_success": 50,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": 0.4,
+      "mean_path_length": 8.2,
+      "median_path_length": 8.0,
+      "mean_planning_cost": 8.2,
+      "mean_cost_gap": 1.2,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.178030178747903,
+      "ci95_cost_gap": [
+        0.873466693888663,
+        1.5265333061113369
+      ],
+      "mean_relative_cost_gap": 0.17142857142857143,
+      "mean_runtime_seconds": 0.058189576622098685,
+      "median_runtime_seconds": 0.05900927050970495,
+      "mean_nodes_created": 158.6,
+      "mean_nodes_expanded": 150.4,
+      "mean_rollout_steps": 547.2
+    },
+    {
+      "complexity_condition": "B_moderate_ambiguity",
+      "algorithm": "mcts_r1",
+      "rollout_policy": "r1",
+      "n": 50,
+      "n_success": 50,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": 1.0,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_relative_cost_gap": 0.0,
+      "mean_runtime_seconds": 0.0570464900135994,
+      "median_runtime_seconds": 0.05693077156320214,
+      "mean_nodes_created": 245.6,
+      "mean_nodes_expanded": 238.6,
+      "mean_rollout_steps": 538.2
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "astar+h2_provider_feasibility",
+      "rollout_policy": "",
+      "n": 10,
+      "n_success": 10,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.0007808583322912455,
+      "median_runtime_seconds": 0.000780896283686161,
+      "mean_nodes_created": 15.0,
+      "mean_nodes_expanded": 8.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "bfs",
+      "rollout_policy": "",
+      "n": 10,
+      "n_success": 10,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.0012021789327263833,
+      "median_runtime_seconds": 0.00115379155613482,
+      "mean_nodes_created": null,
+      "mean_nodes_expanded": 22.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "mcts_r0",
+      "rollout_policy": "r0",
+      "n": 50,
+      "n_success": 50,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": 0.4,
+      "mean_path_length": 9.2,
+      "median_path_length": 8.0,
+      "mean_planning_cost": 9.2,
+      "mean_cost_gap": 2.2,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 2.3386722205349857,
+      "ci95_cost_gap": [
+        1.5517531334437475,
+        2.848246866556253
+      ],
+      "mean_relative_cost_gap": 0.3142857142857143,
+      "mean_runtime_seconds": 0.06658940996043385,
+      "median_runtime_seconds": 0.054293896071612835,
+      "mean_nodes_created": 160.2,
+      "mean_nodes_expanded": 151.0,
+      "mean_rollout_steps": 599.6
+    },
+    {
+      "complexity_condition": "C_high_ambiguity",
+      "algorithm": "mcts_r1",
+      "rollout_policy": "r1",
+      "n": 50,
+      "n_success": 50,
+      "success_rate_pct": 100.0,
+      "optimal_plan_rate": 1.0,
+      "mean_path_length": 7.0,
+      "median_path_length": 7.0,
+      "mean_planning_cost": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_relative_cost_gap": 0.0,
+      "mean_runtime_seconds": 0.050434924103319644,
+      "median_runtime_seconds": 0.050351354060694575,
+      "mean_nodes_created": 191.0,
+      "mean_nodes_expanded": 184.0,
+      "mean_rollout_steps": 451.2
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "astar+h2_provider_feasibility",
+      "rollout_policy": "",
+      "n": 5,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 1.985868439078331e-05,
+      "median_runtime_seconds": 1.958431676030159e-05,
+      "mean_nodes_created": 1.0,
+      "mean_nodes_expanded": 0.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "bfs",
+      "rollout_policy": "",
+      "n": 5,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.16186847481876612,
+      "median_runtime_seconds": 0.15881966659799218,
+      "mean_nodes_created": null,
+      "mean_nodes_expanded": 3001.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "mcts_r0",
+      "rollout_policy": "r0",
+      "n": 25,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.18866925492882727,
+      "median_runtime_seconds": 0.18815525015816092,
+      "mean_nodes_created": 595.0,
+      "mean_nodes_expanded": 585.0,
+      "mean_rollout_steps": 1914.0
+    },
+    {
+      "complexity_condition": "D1_no_usable_provider",
+      "algorithm": "mcts_r1",
+      "rollout_policy": "r1",
+      "n": 25,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.19572456169873476,
+      "median_runtime_seconds": 0.19233695790171623,
+      "mean_nodes_created": 595.0,
+      "mean_nodes_expanded": 585.0,
+      "mean_rollout_steps": 1914.0
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "astar+h2_provider_feasibility",
+      "rollout_policy": "",
+      "n": 5,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.14850846705958248,
+      "median_runtime_seconds": 0.1482479590922594,
+      "mean_nodes_created": 3000.0,
+      "mean_nodes_expanded": 3000.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "bfs",
+      "rollout_policy": "",
+      "n": 5,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.13725969959050416,
+      "median_runtime_seconds": 0.13712774962186813,
+      "mean_nodes_created": null,
+      "mean_nodes_expanded": 3001.0,
+      "mean_rollout_steps": null
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "mcts_r0",
+      "rollout_policy": "r0",
+      "n": 25,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.062211696691811084,
+      "median_runtime_seconds": 0.06217695912346244,
+      "mean_nodes_created": 110.0,
+      "mean_nodes_expanded": 100.0,
+      "mean_rollout_steps": 450.0
+    },
+    {
+      "complexity_condition": "D2_eligibility_blocked",
+      "algorithm": "mcts_r1",
+      "rollout_policy": "r1",
+      "n": 25,
+      "n_success": 0,
+      "success_rate_pct": 0.0,
+      "optimal_plan_rate": null,
+      "mean_path_length": null,
+      "median_path_length": null,
+      "mean_planning_cost": null,
+      "mean_cost_gap": null,
+      "median_cost_gap": null,
+      "stdev_cost_gap": null,
+      "ci95_cost_gap": null,
+      "mean_relative_cost_gap": null,
+      "mean_runtime_seconds": 0.06251361345872283,
+      "median_runtime_seconds": 0.06236908305436373,
+      "mean_nodes_created": 110.0,
+      "mean_nodes_expanded": 100.0,
+      "mean_rollout_steps": 450.0
+    }
+  ],
+  "iteration_budget_sweep": [
+    {
+      "iteration_budget": 100,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.666666666666666,
+      "mean_cost_gap": 1.6666666666666667,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.507556722888818,
+      "ci95_cost_gap": [
+        1.2261894231906818,
+        2.1071439101426517
+      ],
+      "mean_runtime_seconds": 0.038784817647602825,
+      "mean_nodes_created": 144.06666666666666
+    },
+    {
+      "iteration_budget": 100,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.0381171739867164,
+      "mean_nodes_created": 206.06666666666666
+    },
+    {
+      "iteration_budget": 1000,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.466666666666667,
+      "mean_cost_gap": 1.4666666666666666,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.6039723416341296,
+      "ci95_cost_gap": [
+        0.9980187511833385,
+        1.9353145821499946
+      ],
+      "mean_runtime_seconds": 0.09261534812135828,
+      "mean_nodes_created": 158.6
+    },
+    {
+      "iteration_budget": 1000,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.07888318425458339,
+      "mean_nodes_created": 265.4
+    },
+    {
+      "iteration_budget": 250,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.533333333333333,
+      "mean_cost_gap": 1.5333333333333334,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.6459316234555155,
+      "ci95_cost_gap": [
+        1.0524257738085525,
+        2.0142408928581146
+      ],
+      "mean_runtime_seconds": 0.04815614719150795,
+      "mean_nodes_created": 153.13333333333333
+    },
+    {
+      "iteration_budget": 250,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.04554590004392796,
+      "mean_nodes_created": 225.53333333333333
+    },
+    {
+      "iteration_budget": 2500,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.533333333333333,
+      "mean_cost_gap": 1.5333333333333334,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.6039723416341296,
+      "ci95_cost_gap": [
+        1.0646854178500054,
+        2.0019812488166617
+      ],
+      "mean_runtime_seconds": 0.1670114147166411,
+      "mean_nodes_created": 159.73333333333332
+    },
+    {
+      "iteration_budget": 2500,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.1405632268016537,
+      "mean_nodes_created": 282.1333333333333
+    },
+    {
+      "iteration_budget": 50,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.333333333333334,
+      "mean_cost_gap": 1.3333333333333333,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.5521246435421703,
+      "ci95_cost_gap": [
+        0.8798342548983114,
+        1.7868324117683552
+      ],
+      "mean_runtime_seconds": 0.03548557323714097,
+      "mean_nodes_created": 138.93333333333334
+    },
+    {
+      "iteration_budget": 50,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.03309293247552381,
+      "mean_nodes_created": 176.66666666666666
+    },
+    {
+      "iteration_budget": 500,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.4,
+      "mean_cost_gap": 1.4,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.763261440935776,
+      "ci95_cost_gap": [
+        0.8848110673125476,
+        1.9151889326874523
+      ],
+      "mean_runtime_seconds": 0.060297510203801925,
+      "mean_nodes_created": 154.4
+    },
+    {
+      "iteration_budget": 500,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.058285555471148755,
+      "mean_nodes_created": 249.53333333333333
+    }
+  ],
+  "horizon_sweep": [
+    {
+      "horizon": 10,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.4,
+      "mean_cost_gap": 1.4,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.763261440935776,
+      "ci95_cost_gap": [
+        0.8848110673125476,
+        1.9151889326874523
+      ],
+      "mean_runtime_seconds": 0.061692534149107005,
+      "mean_nodes_created": 154.4
+    },
+    {
+      "horizon": 10,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.05872932781154911,
+      "mean_nodes_created": 249.53333333333333
+    },
+    {
+      "horizon": 15,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.533333333333333,
+      "mean_cost_gap": 1.5333333333333334,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.4238232781046696,
+      "ci95_cost_gap": [
+        1.1173212899956193,
+        1.9493453766710476
+      ],
+      "mean_runtime_seconds": 0.07040232692120804,
+      "mean_nodes_created": 161.06666666666666
+    },
+    {
+      "horizon": 15,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.06123224625156985,
+      "mean_nodes_created": 249.53333333333333
+    },
+    {
+      "horizon": 5,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.4,
+      "mean_cost_gap": 0.4,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.6179143806533247,
+      "ci95_cost_gap": [
+        0.2194580549030394,
+        0.5805419450969607
+      ],
+      "mean_runtime_seconds": 0.04182753785409861,
+      "mean_nodes_created": 218.46666666666667
+    },
+    {
+      "horizon": 5,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.04184291393806537,
+      "mean_nodes_created": 235.13333333333333
+    },
+    {
+      "horizon": 8,
+      "rollout_policy": "r0",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.0,
+      "mean_cost_gap": 1.0,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.044465935734187,
+      "ci95_cost_gap": [
+        0.694828413888683,
+        1.305171586111317
+      ],
+      "mean_runtime_seconds": 0.05160053794582685,
+      "mean_nodes_created": 137.93333333333334
+    },
+    {
+      "horizon": 8,
+      "rollout_policy": "r1",
+      "n": 45,
+      "n_success": 45,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.052793761073715154,
+      "mean_nodes_created": 221.46666666666667
+    }
+  ],
+  "exploration_constant_sweep": [
+    {
+      "exploration_constant": 0.5,
+      "rollout_policy": "r0",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.533333333333333,
+      "mean_cost_gap": 1.5333333333333334,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.6965143440419919,
+      "ci95_cost_gap": [
+        0.9262434720962525,
+        2.140423194570414
+      ],
+      "mean_runtime_seconds": 0.05807282637494306,
+      "mean_nodes_created": 129.46666666666667
+    },
+    {
+      "exploration_constant": 0.5,
+      "rollout_policy": "r1",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.03777779587544501,
+      "mean_nodes_created": 116.26666666666667
+    },
+    {
+      "exploration_constant": 1.0,
+      "rollout_policy": "r0",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.133333333333333,
+      "mean_cost_gap": 1.1333333333333333,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.4319827906241325,
+      "ci95_cost_gap": [
+        0.6209048727624307,
+        1.645761793904236
+      ],
+      "mean_runtime_seconds": 0.05694582083572944,
+      "mean_nodes_created": 138.06666666666666
+    },
+    {
+      "exploration_constant": 1.0,
+      "rollout_policy": "r1",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.04850905689721306,
+      "mean_nodes_created": 180.2
+    },
+    {
+      "exploration_constant": 1.4142135623730951,
+      "rollout_policy": "r0",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.4,
+      "mean_cost_gap": 1.4,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.7733661737517428,
+      "ci95_cost_gap": [
+        0.7654090646941024,
+        2.0345909353058973
+      ],
+      "mean_runtime_seconds": 0.06146503607742489,
+      "mean_nodes_created": 154.4
+    },
+    {
+      "exploration_constant": 1.4142135623730951,
+      "rollout_policy": "r1",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.05870001401441793,
+      "mean_nodes_created": 249.53333333333333
+    },
+    {
+      "exploration_constant": 2.0,
+      "rollout_policy": "r0",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 8.4,
+      "mean_cost_gap": 1.4,
+      "median_cost_gap": 1.0,
+      "stdev_cost_gap": 1.2205143065174586,
+      "ci95_cost_gap": [
+        0.963244564607574,
+        1.8367554353924258
+      ],
+      "mean_runtime_seconds": 0.06381062076737483,
+      "mean_nodes_created": 173.53333333333333
+    },
+    {
+      "exploration_constant": 2.0,
+      "rollout_policy": "r1",
+      "n": 30,
+      "n_success": 30,
+      "success_rate_pct": 100.0,
+      "mean_path_length": 7.0,
+      "mean_cost_gap": 0.0,
+      "median_cost_gap": 0.0,
+      "stdev_cost_gap": 0.0,
+      "ci95_cost_gap": [
+        0.0,
+        0.0
+      ],
+      "mean_runtime_seconds": 0.0706630208219091,
+      "mean_nodes_created": 327.73333333333335
+    }
+  ],
+  "failure_classification_counts": {
+    "goal_reached": 1500,
+    "unsolvable": 120
+  },
+  "critical_issues": [],
+  "phase3_readiness": "PASS",
+  "phase3_readiness_reason": "No planner defects or invalid returned plans detected across any experiment."
+}

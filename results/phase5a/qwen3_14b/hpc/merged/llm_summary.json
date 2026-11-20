@@ -1,0 +1,1061 @@
+{
+  "metadata": {
+    "n_tuples_primary_pass": 960,
+    "n_scenarios": 30,
+    "n_episode_rows_total": 1040,
+    "profiles": [
+      "U0",
+      "U1",
+      "U2",
+      "U3"
+    ],
+    "max_online_actions": 30,
+    "experiment_id": "phase5a_primary_qwen3_14b_v1",
+    "scientific_config_fields": {
+      "model_tag": "qwen3:14b",
+      "prompt_version": "llm_policy_v1",
+      "state_renderer_version": "state_renderer_v1",
+      "response_schema_version": "response_schema_v1",
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "presence_penalty": 1.5,
+      "thinking_mode": false,
+      "environment_version": "SocialServiceTransitionEnv v0.2-stochastic (Phase 4A)",
+      "benchmark_tuples_hash": "ecbe62225b1a7415e110583c77b2a711f06aeed9c6427045f3fb705b1138511c"
+    },
+    "experiment_fingerprint": "27e08c3353ae97563129569e389917ac685c2351a1c8e8d04c7fa042429fc6ec",
+    "merged_from_n_shards": 1,
+    "merged_shard_indices": [
+      0
+    ],
+    "num_shards_values_seen": [
+      1
+    ],
+    "n_expected_episode_ids": 1040,
+    "completeness_check": "exact"
+  },
+  "per_profile_summary": {
+    "U0": {
+      "reachable": {
+        "n_episodes": 240,
+        "success": {
+          "n": 240,
+          "count": 240,
+          "proportion": 1.0
+        },
+        "episode_actions": {
+          "n": 240,
+          "mean": 7.0,
+          "median": 7.0,
+          "stdev": 0.0,
+          "min": 7.0,
+          "max": 7.0
+        },
+        "planning_cost": {
+          "n": 240,
+          "mean": 7.0,
+          "median": 7.0,
+          "stdev": 0.0,
+          "min": 7.0,
+          "max": 7.0
+        },
+        "episode_return": {
+          "n": 240,
+          "mean": 128.0,
+          "median": 128.0,
+          "stdev": 0.0,
+          "min": 128.0,
+          "max": 128.0
+        },
+        "invalid_actions": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "constraint_violations": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "llm_calls": {
+          "n": 240,
+          "mean": 7.0,
+          "median": 7.0,
+          "stdev": 0.0,
+          "min": 7.0,
+          "max": 7.0
+        },
+        "malformed_responses": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "total_tokens": {
+          "n": 240,
+          "mean": 12801.266666666666,
+          "median": 12913.0,
+          "stdev": 611.7237833930922,
+          "min": 11750.0,
+          "max": 13742.0
+        },
+        "mean_decision_latency": {
+          "n": 240,
+          "mean": 0.1110598416456404,
+          "median": 9.063336100163204e-05,
+          "stdev": 0.29467084726324666,
+          "min": 7.383814746780055e-05,
+          "max": 0.9960633355658501
+        },
+        "recovery_opportunities_total": 0,
+        "successful_recoveries_total": 0,
+        "pooled_recovery_rate": null,
+        "wait_actions": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "productive_waits": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "unproductive_waits": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "unreachable": {
+        "n_episodes": 0,
+        "label_breakdown": {
+          "unreachable_no_valid_provider": 0,
+          "inconclusive_budget_exhausted": 0
+        },
+        "llm_declares_no_solution": {
+          "n": 0,
+          "count": 0,
+          "proportion": null
+        },
+        "true_dead_end_claim": {
+          "n": 0,
+          "count": 0,
+          "proportion": null
+        },
+        "missed_dead_end": {
+          "n": 0,
+          "count": 0,
+          "proportion": null
+        },
+        "actions_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "tokens_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "episode_actions_before_truncation": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "unnecessary_actions_after_unreachable": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "unproductive_waits": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        }
+      }
+    },
+    "U1": {
+      "reachable": {
+        "n_episodes": 225,
+        "success": {
+          "n": 225,
+          "count": 225,
+          "proportion": 1.0
+        },
+        "episode_actions": {
+          "n": 225,
+          "mean": 7.315555555555555,
+          "median": 7.0,
+          "stdev": 0.6767686997903146,
+          "min": 7.0,
+          "max": 11.0
+        },
+        "planning_cost": {
+          "n": 225,
+          "mean": 11.017777777777777,
+          "median": 7.0,
+          "stdev": 20.53350146808095,
+          "min": 7.0,
+          "max": 158.0
+        },
+        "episode_return": {
+          "n": 225,
+          "mean": 128.61777777777777,
+          "median": 128.0,
+          "stdev": 9.98416802298074,
+          "min": 65.0,
+          "max": 146.0
+        },
+        "invalid_actions": {
+          "n": 225,
+          "mean": 0.07555555555555556,
+          "median": 0.0,
+          "stdev": 0.4103328111094894,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "constraint_violations": {
+          "n": 225,
+          "mean": 0.07555555555555556,
+          "median": 0.0,
+          "stdev": 0.4103328111094894,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "llm_calls": {
+          "n": 225,
+          "mean": 7.315555555555555,
+          "median": 7.0,
+          "stdev": 0.6767686997903146,
+          "min": 7.0,
+          "max": 11.0
+        },
+        "malformed_responses": {
+          "n": 225,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "total_tokens": {
+          "n": 225,
+          "mean": 13387.257777777777,
+          "median": 12936.0,
+          "stdev": 1409.3293095997208,
+          "min": 11750.0,
+          "max": 20384.0
+        },
+        "mean_decision_latency": {
+          "n": 225,
+          "mean": 0.08294024098112314,
+          "median": 9.386613965034485e-05,
+          "stdev": 0.17560461765370025,
+          "min": 7.728197877960545e-05,
+          "max": 0.7149467240934345
+        },
+        "recovery_opportunities_total": 38,
+        "successful_recoveries_total": 38,
+        "pooled_recovery_rate": 1.0,
+        "wait_actions": {
+          "n": 225,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "productive_waits": {
+          "n": 225,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "unproductive_waits": {
+          "n": 225,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "unreachable": {
+        "n_episodes": 15,
+        "label_breakdown": {
+          "unreachable_no_valid_provider": 15,
+          "inconclusive_budget_exhausted": 0
+        },
+        "llm_declares_no_solution": {
+          "n": 15,
+          "count": 0,
+          "proportion": 0.0
+        },
+        "true_dead_end_claim": {
+          "n": 15,
+          "count": 0,
+          "proportion": 0.0
+        },
+        "missed_dead_end": {
+          "n": 15,
+          "count": 15,
+          "proportion": 1.0
+        },
+        "actions_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "tokens_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "episode_actions_before_truncation": {
+          "n": 15,
+          "mean": 30.0,
+          "median": 30.0,
+          "stdev": 0.0,
+          "min": 30.0,
+          "max": 30.0
+        },
+        "unnecessary_actions_after_unreachable": {
+          "n": 15,
+          "mean": 25.266666666666666,
+          "median": 25.0,
+          "stdev": 0.7988086367179802,
+          "min": 24.0,
+          "max": 26.0
+        },
+        "unproductive_waits": {
+          "n": 15,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "U2": {
+      "reachable": {
+        "n_episodes": 174,
+        "success": {
+          "n": 174,
+          "count": 174,
+          "proportion": 1.0
+        },
+        "episode_actions": {
+          "n": 174,
+          "mean": 7.890804597701149,
+          "median": 8.0,
+          "stdev": 1.0883653951102712,
+          "min": 7.0,
+          "max": 12.0
+        },
+        "planning_cost": {
+          "n": 174,
+          "mean": 21.689655172413794,
+          "median": 8.0,
+          "stdev": 38.97703795495084,
+          "min": 7.0,
+          "max": 159.0
+        },
+        "episode_return": {
+          "n": 174,
+          "mean": 127.683908045977,
+          "median": 128.0,
+          "stdev": 18.08228062220488,
+          "min": 65.0,
+          "max": 156.0
+        },
+        "invalid_actions": {
+          "n": 174,
+          "mean": 0.28160919540229884,
+          "median": 0.0,
+          "stdev": 0.7798071105253775,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "constraint_violations": {
+          "n": 174,
+          "mean": 0.28160919540229884,
+          "median": 0.0,
+          "stdev": 0.7798071105253775,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "llm_calls": {
+          "n": 174,
+          "mean": 7.890804597701149,
+          "median": 8.0,
+          "stdev": 1.0883653951102712,
+          "min": 7.0,
+          "max": 12.0
+        },
+        "malformed_responses": {
+          "n": 174,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "total_tokens": {
+          "n": 174,
+          "mean": 14465.097701149425,
+          "median": 13742.0,
+          "stdev": 2184.8409967662988,
+          "min": 11750.0,
+          "max": 22236.0
+        },
+        "mean_decision_latency": {
+          "n": 174,
+          "mean": 0.1397228505311306,
+          "median": 0.00010255670141694801,
+          "stdev": 0.20856126219521243,
+          "min": 7.84554285928607e-05,
+          "max": 0.7765936177456751
+        },
+        "recovery_opportunities_total": 88,
+        "successful_recoveries_total": 88,
+        "pooled_recovery_rate": 1.0,
+        "wait_actions": {
+          "n": 174,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "productive_waits": {
+          "n": 174,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "unproductive_waits": {
+          "n": 174,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "unreachable": {
+        "n_episodes": 66,
+        "label_breakdown": {
+          "unreachable_no_valid_provider": 66,
+          "inconclusive_budget_exhausted": 0
+        },
+        "llm_declares_no_solution": {
+          "n": 66,
+          "count": 0,
+          "proportion": 0.0
+        },
+        "true_dead_end_claim": {
+          "n": 66,
+          "count": 0,
+          "proportion": 0.0
+        },
+        "missed_dead_end": {
+          "n": 66,
+          "count": 66,
+          "proportion": 1.0
+        },
+        "actions_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "tokens_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "episode_actions_before_truncation": {
+          "n": 66,
+          "mean": 30.0,
+          "median": 30.0,
+          "stdev": 0.0,
+          "min": 30.0,
+          "max": 30.0
+        },
+        "unnecessary_actions_after_unreachable": {
+          "n": 66,
+          "mean": 24.53030303030303,
+          "median": 25.0,
+          "stdev": 1.055676188256709,
+          "min": 22.0,
+          "max": 26.0
+        },
+        "unproductive_waits": {
+          "n": 66,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "U3": {
+      "reachable": {
+        "n_episodes": 94,
+        "success": {
+          "n": 94,
+          "count": 94,
+          "proportion": 1.0
+        },
+        "episode_actions": {
+          "n": 94,
+          "mean": 8.617021276595745,
+          "median": 8.0,
+          "stdev": 1.620476386737106,
+          "min": 7.0,
+          "max": 14.0
+        },
+        "planning_cost": {
+          "n": 94,
+          "mean": 37.287234042553195,
+          "median": 8.0,
+          "stdev": 49.065815430706124,
+          "min": 7.0,
+          "max": 159.0
+        },
+        "episode_return": {
+          "n": 94,
+          "mean": 123.77659574468085,
+          "median": 128.0,
+          "stdev": 21.85197230601342,
+          "min": 65.0,
+          "max": 156.0
+        },
+        "invalid_actions": {
+          "n": 94,
+          "mean": 0.5851063829787234,
+          "median": 0.0,
+          "stdev": 0.9772638396138905,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "constraint_violations": {
+          "n": 94,
+          "mean": 0.5851063829787234,
+          "median": 0.0,
+          "stdev": 0.9772638396138905,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "llm_calls": {
+          "n": 94,
+          "mean": 8.617021276595745,
+          "median": 8.0,
+          "stdev": 1.620476386737106,
+          "min": 7.0,
+          "max": 14.0
+        },
+        "malformed_responses": {
+          "n": 94,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "total_tokens": {
+          "n": 94,
+          "mean": 15781.117021276596,
+          "median": 15221.0,
+          "stdev": 3071.9724386097814,
+          "min": 11750.0,
+          "max": 25932.0
+        },
+        "mean_decision_latency": {
+          "n": 94,
+          "mean": 0.13574069955040322,
+          "median": 0.00010217433591606096,
+          "stdev": 0.1994615932045068,
+          "min": 7.990672851779632e-05,
+          "max": 0.724750260272148
+        },
+        "recovery_opportunities_total": 83,
+        "successful_recoveries_total": 83,
+        "pooled_recovery_rate": 1.0,
+        "wait_actions": {
+          "n": 94,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "productive_waits": {
+          "n": 94,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "unproductive_waits": {
+          "n": 94,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "unreachable": {
+        "n_episodes": 146,
+        "label_breakdown": {
+          "unreachable_no_valid_provider": 146,
+          "inconclusive_budget_exhausted": 0
+        },
+        "llm_declares_no_solution": {
+          "n": 146,
+          "count": 0,
+          "proportion": 0.0
+        },
+        "true_dead_end_claim": {
+          "n": 146,
+          "count": 0,
+          "proportion": 0.0
+        },
+        "missed_dead_end": {
+          "n": 146,
+          "count": 146,
+          "proportion": 1.0
+        },
+        "actions_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "tokens_before_declaration": {
+          "n": 0,
+          "mean": null,
+          "median": null,
+          "stdev": null,
+          "min": null,
+          "max": null
+        },
+        "episode_actions_before_truncation": {
+          "n": 146,
+          "mean": 30.0,
+          "median": 30.0,
+          "stdev": 0.0,
+          "min": 30.0,
+          "max": 30.0
+        },
+        "unnecessary_actions_after_unreachable": {
+          "n": 146,
+          "mean": 24.034246575342465,
+          "median": 24.0,
+          "stdev": 1.4064598922246119,
+          "min": 19.0,
+          "max": 26.0
+        },
+        "unproductive_waits": {
+          "n": 146,
+          "mean": 0.08904109589041095,
+          "median": 0.0,
+          "stdev": 0.9960005046163541,
+          "min": 0.0,
+          "max": 12.0
+        }
+      }
+    }
+  },
+  "deterministic_optimality_vs_astar_h2": {
+    "available": true,
+    "n_llm_successful_reachable_episodes": 240,
+    "astar_optimal_episode_fraction": 1.0,
+    "cost_gap": {
+      "n": 240,
+      "mean": 0.0,
+      "median": 0.0,
+      "stdev": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    }
+  },
+  "dead_end_claim_summary": {
+    "n_episodes_claiming_no_solution": 0,
+    "true_dead_end_claims": 0,
+    "false_dead_end_claims": 0,
+    "missed_dead_end_count": 227
+  },
+  "disturbance_type_analysis": {
+    "provider": {
+      "recovery_opportunities": 218,
+      "recovered": {
+        "n": 218,
+        "count": 96,
+        "proportion": 0.44036697247706424
+      },
+      "latency": {
+        "n": 96,
+        "mean": 1.0,
+        "median": 1.0,
+        "stdev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "alternate_provider_available": {
+        "n": 218,
+        "count": 144,
+        "proportion": 0.6605504587155964
+      },
+      "recovered_given_alternate_available": {
+        "n": 144,
+        "count": 96,
+        "proportion": 0.6666666666666666
+      }
+    },
+    "housing": {
+      "recovery_opportunities": 214,
+      "recovered": {
+        "n": 214,
+        "count": 93,
+        "proportion": 0.43457943925233644
+      },
+      "latency": {
+        "n": 93,
+        "mean": 1.2150537634408602,
+        "median": 1.0,
+        "stdev": 0.528522599689381,
+        "min": 1.0,
+        "max": 4.0
+      }
+    },
+    "approval_delay": {
+      "recovery_opportunities": 112,
+      "recovered": {
+        "n": 112,
+        "count": 112,
+        "proportion": 1.0
+      },
+      "latency": {
+        "n": 112,
+        "mean": 2.0625,
+        "median": 2.0,
+        "stdev": 0.785926319816419,
+        "min": 1.0,
+        "max": 3.0
+      }
+    }
+  },
+  "dqn_slot_index_comparison": {
+    "llm_only": {
+      "with_provider_disruption": {
+        "n_episodes": 343,
+        "success": {
+          "n": 343,
+          "count": 116,
+          "proportion": 0.33819241982507287
+        },
+        "final_provider_slot_index": {
+          "n": 116,
+          "mean": 4.629310344827586,
+          "median": 4.0,
+          "stdev": 2.185048690786877,
+          "min": 1.0,
+          "max": 9.0
+        },
+        "max_selected_provider_slot_index": {
+          "n": 343,
+          "mean": 4.072886297376093,
+          "median": 4.0,
+          "stdev": 2.5091515787071628,
+          "min": 0.0,
+          "max": 9.0
+        }
+      },
+      "without_provider_disruption": {
+        "n_episodes": 377,
+        "success": {
+          "n": 377,
+          "count": 377,
+          "proportion": 1.0
+        },
+        "final_provider_slot_index": {
+          "n": 377,
+          "mean": 1.2440318302387268,
+          "median": 1.0,
+          "stdev": 1.5553178094350504,
+          "min": 0.0,
+          "max": 7.0
+        },
+        "max_selected_provider_slot_index": {
+          "n": 377,
+          "mean": 1.2440318302387268,
+          "median": 1.0,
+          "stdev": 1.5553178094350504,
+          "min": 0.0,
+          "max": 7.0
+        }
+      }
+    },
+    "dqn_masked_phase4b": {
+      "with_provider_disruption": {
+        "n_episodes": 347,
+        "success": {
+          "n": 347,
+          "count": 71,
+          "proportion": 0.20461095100864554,
+          "ci95_low": 0.16550780389536981,
+          "ci95_high": 0.2501829237720448
+        },
+        "final_provider_slot_index": {
+          "n": 100,
+          "mean": 4.01,
+          "median": 4.0,
+          "stdev": 1.6544705277739846,
+          "ci95_low": 3.6857237765562987,
+          "ci95_high": 4.334276223443701
+        },
+        "max_selected_provider_slot_index": {
+          "n": 347,
+          "mean": 3.322766570605187,
+          "median": 3.0,
+          "stdev": 2.121899400030629,
+          "ci95_low": 3.0995038955678997,
+          "ci95_high": 3.5460292456424747
+        }
+      },
+      "without_provider_disruption": {
+        "n_episodes": 373,
+        "success": {
+          "n": 373,
+          "count": 340,
+          "proportion": 0.9115281501340483,
+          "ci95_low": 0.878355250001025,
+          "ci95_high": 0.9363106467577195
+        },
+        "final_provider_slot_index": {
+          "n": 373,
+          "mean": 1.2171581769436997,
+          "median": 1.0,
+          "stdev": 1.5462495274880061,
+          "ci95_low": 1.0602371161295223,
+          "ci95_high": 1.374079237757877
+        },
+        "max_selected_provider_slot_index": {
+          "n": 373,
+          "mean": 1.2171581769436997,
+          "median": 1.0,
+          "stdev": 1.5462495274880061,
+          "ci95_low": 1.0602371161295223,
+          "ci95_high": 1.374079237757877
+        }
+      }
+    }
+  },
+  "taxonomy_counts": {
+    "invalid_prerequisite_reasoning": 1082,
+    "selects_unavailable_provider": 1120,
+    "selects_zero_capacity_provider": 1250,
+    "premature_completion": 0,
+    "unnecessary_wait": 13,
+    "false_dead_end": 0,
+    "missed_dead_end": 5507,
+    "repeated_action_loop": 123,
+    "ignores_observed_disruption": 235,
+    "malformed_response": 0,
+    "unsupported_fact_in_reason": 0,
+    "action_not_in_catalog": 0
+  },
+  "loop_detection": {
+    "n_episodes_with_loop": 123,
+    "loop_length": {
+      "n": 123,
+      "mean": 4.0,
+      "median": 4.0,
+      "stdev": 0.0,
+      "min": 4.0,
+      "max": 4.0
+    }
+  },
+  "action_consistency": {
+    "n_states_with_repeated_observations": 128,
+    "action_consistency_rate": 0.98125,
+    "mean_unique_actions_per_state": 1.078125
+  },
+  "cross_algorithm_comparison": {
+    "fairness_note": "The LLM receives domain rules expressed in natural language at inference time. A*/MCTS/BFS receive an explicit, exact transition model. Q-learning/DQN received offline training experience. These are different forms of prior information; this table is a behavioral/architectural comparison, not a claim of equal learning resources (Phase 5A \u00a744).",
+    "dimensions": {
+      "reachable_success_U0": {
+        "llm_only": {
+          "n": 240,
+          "count": 240,
+          "proportion": 1.0
+        },
+        "astar_h2": {
+          "n": 240,
+          "count": 240,
+          "proportion": 1.0,
+          "ci95_low": 0.9842455102000642,
+          "ci95_high": 1.0
+        },
+        "mcts_r1": {
+          "n": 240,
+          "count": 240,
+          "proportion": 1.0,
+          "ci95_low": 0.9842455102000642,
+          "ci95_high": 1.0
+        },
+        "qlearning_masked": {
+          "n": 240,
+          "count": 240,
+          "proportion": 1.0,
+          "ci95_low": 0.9842455102000642,
+          "ci95_high": 1.0
+        },
+        "dqn_masked": {
+          "n": 240,
+          "count": 240,
+          "proportion": 1.0,
+          "ci95_low": 0.9842455102000642,
+          "ci95_high": 1.0
+        },
+        "bfs": {
+          "n": 240,
+          "count": 240,
+          "proportion": 1.0,
+          "ci95_low": 0.9842455102000642,
+          "ci95_high": 1.0
+        }
+      },
+      "invalid_actions_U0": {
+        "llm_only": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "astar_h2": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "ci95_low": null,
+          "ci95_high": null
+        },
+        "mcts_r1": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "ci95_low": null,
+          "ci95_high": null
+        },
+        "qlearning_masked": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "ci95_low": null,
+          "ci95_high": null
+        },
+        "dqn_masked": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "ci95_low": null,
+          "ci95_high": null
+        },
+        "bfs": {
+          "n": 240,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "ci95_low": null,
+          "ci95_high": null
+        }
+      },
+      "online_compute": {
+        "llm_only": "one LLM API call (plus at most one formatting retry) per decision step"
+      },
+      "offline_training_required": {
+        "llm_only": false,
+        "astar_h2": false,
+        "bfs": false,
+        "mcts_r1": false,
+        "qlearning_masked": true,
+        "dqn_masked": true
+      },
+      "model_domain_knowledge_required": {
+        "llm_only": "natural-language domain rules given at inference time",
+        "astar_h2": "exact transition model + admissible heuristic",
+        "mcts_r1": "exact transition model (used as the rollout simulator)",
+        "qlearning_masked": "learned from training experience; masked action space",
+        "dqn_masked": "learned from training experience; masked action space"
+      },
+      "dead_end_recognition_mechanism": {
+        "llm_only": "model prediction only (no formal proof)",
+        "astar_h2": "exact admissible-heuristic proof",
+        "mcts_r1": "never proves impossibility",
+        "qlearning_masked": "no explicit mechanism",
+        "dqn_masked": "no explicit mechanism"
+      }
+    }
+  }
+}

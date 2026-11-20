@@ -1,0 +1,6 @@
+algorithm,headline_success_pct,metric_context,note
+A*,100,Phase 4B reachable success,Classical search remained successful on reachable cases
+MCTS,100,Phase 4B reachable success,Simulation search remained successful on reachable cases
+Q-Learning,100,Phase 4B reachable success,Tabular RL remained successful on reachable cases
+DQN,20,Provider-disruption stress result,High-index provider OOD brittleness under provider disruption
+Qwen3:14b,100,Phase 5A reachable success,733 of 733 reachable primary cases solved

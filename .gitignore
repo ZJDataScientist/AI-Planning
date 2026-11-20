@@ -1,0 +1,27 @@
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Local environments
+.venv/
+.venv-dashboard/
+.venv-hpc/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Large/local model files
+*.gguf
+ollama-models/
+
+# Dashboard development backups / patch helpers
+dashboard/*.backup
+dashboard/*.v1-backup
+dashboard/*.before_*
+apply_dashboard_*.py
